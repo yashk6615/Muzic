@@ -1,5 +1,5 @@
 /muzic_backend/node_modules
 
 /muzic_frontend/node_modules
-/muzic_frontend/src/utils/config.js
+/muzic_frontend/src/config.js
 /muzic_backend/.env
