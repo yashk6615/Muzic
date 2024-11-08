@@ -23,8 +23,8 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/music-streaming-app.git
-cd music-streaming-app
+git clone https://github.com/yashk6615/muzic.git
+cd muzic
 Install dependencies for both client and server:
 
 bash
