@@ -29,9 +29,9 @@ Install dependencies for both client and server:
 
 bash
 Copy code
-cd client
+cd muzic_frontend
 npm install
-cd ../server
+cd ../muzic_backend
 npm install
 Environment Variables:
 
@@ -46,11 +46,11 @@ Start the Application:
 Run both client and server concurrently or in separate terminals:
 bash
 Copy code
-cd client
+cd muzic_frontend
 npm start
 bash
 Copy code
-cd server
+cd muzic_backend
 npm start
 Access the Application: Open http://localhost:3000 in your browser.
 
@@ -58,13 +58,12 @@ Access the Application: Open http://localhost:3000 in your browser.
 plaintext
 Copy code
 music-streaming-app
-├── client               # Frontend files (React)
-└── server               # Backend files (Node.js, Express)
+├── muzic_frontend               # Frontend files (React)
+└── muzic_backend               # Backend files (Node.js, Express)
     └── models           # Database models (e.g., User, Playlist, Song)
     └── controllers      # Request handlers
     └── routes           # API routes
 🤝 Contributing
 Feel free to submit issues, create pull requests, or reach out if you have ideas to improve the application.
 
-📄 License
-This project is licensed under the MIT License.
+
