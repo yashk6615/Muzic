@@ -1,6 +1,6 @@
 import './output.css';
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate ,Link} from 'react-router-dom';
 import LoginComponent from './routes/login';
 import SignupComponent from './routes/signup';
 import HomeComponent from './routes/home';
@@ -47,7 +47,11 @@ function App() {
 }
 
 const Hellocomponent = () => {
-  return <div>This is component</div>;
+  return (
+    <Link to="/home">
+      <div className="w-full h-full  flex items-center justify-center bg-app-black text-gray-300 font-bold text-2xl">Go To Home</div>
+    </Link>
+  );
 };
 
 export default App;

@@ -30,7 +30,13 @@ router.get("/get/artist/:artistId",passport.authenticate("jwt",{session:false}),
     if (!artist){
         return res.status(301).json({error:"Artist does not exist"})
     }
-    const songs = await Song.find({ artist: artistId })
+    const songs = await Song.find({ artist: artistId }).populate({
+        path:"songs",
+        populate:{
+            path:"artist"
+        }
+        
+    })
     return res.status(200).json({ data: songs })
 
 })

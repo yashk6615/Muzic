@@ -3,6 +3,8 @@ const router=express.Router()
 const bcrypt=require("bcrypt")
 const User=require("../Models/User")
 const {getToken}=require("../utils/helper")
+const BadRequest = require("../errors/bad-request")
+const UnauthenticatedError = require("../errors/unauthenticated")
 
 
 router.post("/register",async (req,res)=>{
@@ -41,13 +43,13 @@ router.post("/login",async (req,res)=>{
 
     const user=await User.findOne({email:email})
     if (!user){
-        return res.status(403).json({error:"Invalid credential"});
+        throw new BadRequest('No such user exist')
     }
 
 
     const isPasswordValid=await bcrypt.compare(password,user.password);
     if (!isPasswordValid){
-        return res.status(403).json({ error: 'Invalid credential' });
+        throw new UnauthenticatedError('Wrong Password')
     }
 
     const token=await getToken(user.email,user);

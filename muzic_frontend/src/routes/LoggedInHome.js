@@ -1,8 +1,6 @@
-
 import { Howl, Howler } from 'howler';
 import { useState } from 'react';
 import LoggedInContainer from '../containers/LoggedInContainer';
-
 
 const focusCardsData = [
   {
@@ -69,11 +67,12 @@ const MuzicPlaylistCardsData = [
   },
 ];
 
-const LoggedInHomeComponent = () => {
-   
 
+
+
+const LoggedInHomeComponent = () => {
   return (
-    <LoggedInContainer curActiveScreen={"home"}>
+    <LoggedInContainer curActiveScreen={'home'}>
       <PlaylistView titleText="Focus" cardsData={focusCardsData} />
       <PlaylistView titleText="Trending " cardsData={MuzicPlaylistCardsData} />
       <PlaylistView titleText="Your Kind" cardsData={focusCardsData} />
@@ -83,19 +82,17 @@ const LoggedInHomeComponent = () => {
 
 const PlaylistView = ({ titleText, cardsData }) => {
   return (
-    <div className="text-white mt-8">
+    <div className="text-white mt-8 px-4">
       <div className="text-2xl font-semibold mb-5">{titleText}</div>
-      <div className="w-full flex  justify-center space-x-10">
-        {cardsData.map((item) => {
-          return (
-            <Card
-              title={item.title}
-              description={item.description}
-              imgUrl={item.imgUrl}
-            />
-          );
-        })}
-        
+      <div className="w-full flex flex-wrap gap-4 justify-center sm:justify-start">
+        {cardsData.map((item, index) => (
+          <Card
+            key={index}
+            title={item.title}
+            description={item.description}
+            imgUrl={item.imgUrl}
+          />
+        ))}
       </div>
     </div>
   );
@@ -103,9 +100,9 @@ const PlaylistView = ({ titleText, cardsData }) => {
 
 const Card = ({ title, description, imgUrl }) => {
   return (
-    <div className="bg-black bg-opacity-60 w-1/6 p-4 rounded-lg">
+    <div className="bg-black bg-opacity-60 w-full sm:w-1/2 md:w-1/3 lg:w-1/6 p-4 rounded-lg">
       <div className="py-4">
-        <img className="w-full rounded-md" src={imgUrl} alt=""></img>
+        <img className="w-full rounded-md" src={imgUrl} alt={title}></img>
       </div>
       <div className="text-white font-semibold py-3">{title}</div>
       <div className="text-gray-500 text-sm">{description}</div>
