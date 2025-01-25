@@ -1,6 +1,8 @@
 🎶 Music Streaming Application
 A web-based music streaming application that allows users to enjoy their favorite tracks, create playlists, and discover new music. Built with a focus on user experience, the app offers easy signup, a seamless login, and a smooth listening experience.
 
+The project is live on : https://muzic-three.vercel.app/
+
 🚀 Features
 User Authentication
 
